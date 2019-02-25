@@ -1,4 +1,4 @@
-# Building Java Projects with Gradle   dfg
+# Building Java Projects with Gradle  Testing
 
 ##### This guide walks you through using Gradle to build a simple Java project.
 
