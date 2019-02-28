@@ -9,7 +9,7 @@ pipeline {
         sh './gradlew clean build '
 
           // i used a script block because you can jam arbitrary groovy in here
-          // without being constrained by the declarative Jenkinsfile DSL
+          // without being constrained ccby the declarative Jenkinsfile DSL
           def awesomeVar = 'so_true'
           print "look at this: ${awesomeVar}"
 
