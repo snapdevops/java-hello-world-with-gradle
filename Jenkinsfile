@@ -19,7 +19,7 @@ pipeline {
         
       }
     }
-    
+    // For Testing
          stage ('Test') {
       steps {
         script {
@@ -39,6 +39,16 @@ pipeline {
       }
     }
     
+    // For Building Docker images
+             stage ('Building Docker Image') {
+      steps {
+        script {
+       archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
+        }
+        
+      }
+    }
     
+    // main loop ends below
   }
 }
