@@ -36,7 +36,7 @@ pipeline {
           //echo "currentBuild.number: ${currentBuild.number}"
         }
         
-      }
+      } 
     }
     
     // For Building Docker images
