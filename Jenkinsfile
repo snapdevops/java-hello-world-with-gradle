@@ -39,17 +39,32 @@ pipeline {
       } 
     }
     
-    // For Building Docker images
+    // For Building archieve
              stage ('Building Docker Image') {
       steps {
         script {
        archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
-          docker info
+      
         }
         
       }
     }
     
+    // Building Docker images
+    
+     // For Building Docker images
+             stage ('Building Docker Image') {
+      steps {
+        script {
+         sh 'docker info '
+      
+        }
+        
+      }
+    }
+    
+    // main loop ends below
+
     // main loop ends below
   }
 }
