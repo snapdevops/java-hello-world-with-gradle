@@ -44,6 +44,7 @@ pipeline {
       steps {
         script {
        archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
+          docker info
         }
         
       }
