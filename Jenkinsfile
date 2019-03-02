@@ -40,7 +40,7 @@ pipeline {
     }
     
     // For Building archieve
-             stage ('Building Docker Image') {
+             stage ('Archieve artifacts to artifactory') {
       steps {
         script {
        archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
