@@ -56,7 +56,7 @@ pipeline {
              stage ('Building Docker Image') {
       steps {
         script {
-         sh 'docker info '
+          sh 'docker info '
           sh 'docker build -t mycustomnginxbuild .'
           #      
         }
