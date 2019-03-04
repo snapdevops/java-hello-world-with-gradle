@@ -1,7 +1,8 @@
 pipeline {
   agent any
   stages {
-     stage ('build') {
+    //  First stage 
+    stage ('build') {
       steps {
         script {
         // checkout scm    
@@ -16,11 +17,10 @@ pipeline {
           // accessing a predefined variable:
           echo "currentBuild.number: ${currentBuild.number}"
         }
-        
       }
     }
     // For Testing
-         stage ('Test') {
+      stage ('Test') {
       steps {
         script {
         // checkout scm    
@@ -35,37 +35,31 @@ pipeline {
           // accessing a predefined variable:
           //echo "currentBuild.number: ${currentBuild.number}"
         }
-        
-      } 
+       } 
     }
     
     // For Building archieve
-             stage ('Archieve artifacts to artifactory') {
+      stage ('Archieve artifacts to artifactory') {
       steps {
         script {
        archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
-      
-        }
-        
-      }
-    }
+              }
+            }
+           }
     
     // Building Docker images
     
      // For Building Docker images
-             stage ('Building Docker Image') {
+      stage ('Building Docker Image') {
       steps {
         script {
           sh 'docker info '
           sh 'docker build -t mycustomnginxbuild .'
           #      
         }
-        
       }
     }
-    
-    // main loop ends below
-
+   // main loop ends below
     // main loop ends below
   }
 }
