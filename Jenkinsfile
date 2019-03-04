@@ -54,7 +54,7 @@ pipeline {
       steps {
         script {
           sh 'docker info '
-          sh 'docker build -t mycustomnginxbuild .'
+          //sh 'docker build -t mycustomnginxbuild .'
          // #      
         }
       }
